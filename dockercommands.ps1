@@ -18,7 +18,12 @@ docker stop my_container
 docker kill $(docker ps -q)
 #remove unused images
 docker rmi $(docker images -f "dangling=true" -q)
+#remove all images
+docker rmi $(docker images -q)
 #stop all containers
 docker stop $(docker ps -a -q)
 #remove all containers
 docker rm $(docker ps -a -q)
+#docker compose yml or yaml file
+docker-compose up
+docker-compose down
